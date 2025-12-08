@@ -13,107 +13,157 @@
 
 ## 📋 Table of Contents
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Code Snippets to Copy](#snippets)
-6. 🔗 [Assets](#links)
-7. 🚀 [More](#more)
+1. 🤖 [Introduction](#-introduction)  
+2. ⚙️ [Tech Stack](#-tech-stack)  
+3. 🔋 [Features](#-features)  
+4. 🤸 [Quick Start](#-quick-start)  
+5. 🕸️ [Code Snippets to Copy](#-code-snippets-to-copy)  
+6. 🔗 [Assets](#-assets)  
+7. 🚀 [More](#-more)  
+8. 📸 [Screenshots](#-screenshots)  
+
+---
 
 ## 🤖 Introduction
 
-**Banking App** is a modern fintech web application built with **Next.js** and **TypeScript** that simulates a real-world banking dashboard.
+**Banking App** is a modern fintech web application built with **Next.js**, **TypeScript**, and **Appwrite** that simulates a real-world banking dashboard.
 
-The application allows users to:
+It allows users to:
 
-- Securely sign up and sign in using **Appwrite** authentication  
+- Sign up & sign in securely  
 - Connect multiple bank accounts using **Plaid**  
-- View a unified overview of balances, recent transactions, and spending categories  
-- Transfer funds between users using **Dwolla** as a payment rail  
-- Track financial activity in a clean, responsive dashboard UI  
+- View a unified financial dashboard  
+- Transfer money using **Dwolla**  
+- Track recent transactions and spending categories  
 
-The goal of this project is to practice and demonstrate **full-stack skills**: integrating multiple third-party APIs (Appwrite, Plaid, Dwolla), handling real-world data flows (accounts, transactions, transfers), and building a scalable UI with reusable components (ShadCN, Radix UI, TailwindCSS).
+A complete stack project demonstrating authentication, API integrations, secure backend actions, and a responsive UI.
 
-This project is ideal for learning:
-
-- How to structure a Next.js app using the **App Router**
-- How to implement **SSR-friendly authentication** and sessions
-- How to connect external fintech services safely with environment variables
-- How to build a production-style dashboard with reusable UI patterns
+---
 
 ## ⚙️ Tech Stack
 
-- **Framework:** Next.js (App Router)
-- **Language:** TypeScript
-- **Styling:** TailwindCSS, TailwindCSS Animate
-- **UI Components:** ShadCN, Radix UI (Tabs, Progress, Select, etc.)
-- **Backend / Auth / DB:** Appwrite (users, banks, transactions collections)
-- **Bank Integrations:** Plaid (accounts, transactions, link token, processor token)
-- **Payments:** Dwolla (customers, funding sources, transfers)
-- **Forms & Validation:** React Hook Form, Zod
-- **Data Visualization:** Chart.js
-- **Other utilities:** Custom hooks and helper functions (`utils`, `actions`, etc.)
+- **Framework:** Next.js (App Router)  
+- **Language:** TypeScript  
+- **Styling:** TailwindCSS, Radix UI, ShadCN  
+- **Backend / Auth / DB:** Appwrite  
+- **Banking Integrations:** Plaid  
+- **Payments:** Dwolla  
+- **Validation:** React Hook Form + Zod  
+- **Charts:** Chart.js  
+
+---
 
 ## 🔋 Features
 
-- **Authentication with Appwrite**  
-  - Email/password signup and login  
-  - Secure session handling using HTTP-only cookies  
-  - Server-side user fetching with `createSessionClient` and `createAdminClient`
+- Appwrite email/password authentication  
+- Connect unlimited bank accounts (Plaid sandbox)  
+- Real-time dashboard with balances & graphs  
+- Dwolla transfer system between users  
+- Sharable encrypted account IDs  
+- Responsive layout with reusable UI components  
 
-- **Multi-bank integration with Plaid**  
-  - Connect multiple bank accounts from the sandbox environment  
-  - Exchange Plaid public token for access token and item ID  
-  - Fetch account details (balance, mask, subtype, institution)  
-  - Store bank metadata in Appwrite collections
-
-- **Real-time account overview dashboard**  
-  - Total balance across all connected banks  
-  - List of connected accounts with current/available balance  
-  - Top spending categories using progress bars  
-  - Recent transactions list with debit/credit indication
-
-- **Transaction history and pagination**  
-  - Fetch and combine Plaid transactions and internal transfer records  
-  - Sort by date to show most recent activity first  
-  - Paginated transaction list with previous/next navigation
-
-- **Funds transfer with Dwolla**  
-  - Create Dwolla customers linked to Appwrite users  
-  - Create funding sources using Plaid processor tokens  
-  - Transfer money between users’ funding sources  
-  - Store transfer metadata as transactions in Appwrite
-
-- **Sharable account ID for transfers**  
-  - Generate encrypted sharable IDs for accounts  
-  - Allow transfers using a public sharable ID instead of raw account ID  
-  - Decrypt sharable ID safely on the server
-
-- **Reusable UI components**  
-  - `BankInfo`, `BankTabItem`, `BankDropdown` for account selection  
-  - `Category` cards with Radix progress bars  
-  - `PaymentTransferForm` with validation and loading states  
-  - `Pagination`, `Copy` button, and various ShadCN form components
-
-- **Responsive layout**  
-  - Works smoothly on desktop, tablet, and mobile  
-  - Uses a modern dashboard layout with sidebar, header, and content sections
+---
 
 ## 🤸 Quick Start
 
-Follow these steps to set up the project locally.
-
 ### Prerequisites
 
-Make sure you have installed:
+Install:
 
-- [Git](https://git-scm.com)
-- [Node.js](https://nodejs.org/en) (v18+ recommended)
-- [npm](https://www.npmjs.com/) (or yarn/pnpm if you prefer)
+- Git  
+- Node.js (v18+)  
+- npm / yarn / pnpm  
 
 ### Clone the Repository
 
 ```bash
 git clone https://github.com/<Harsh-0812>/banking-app.git
 cd banking-app
+```
+
+### Install Dependencies
+
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+```
+
+### Setup Environment Variables
+
+```bash
+cp .env.example .env.local
+```
+
+Fill in:
+
+- Appwrite Project ID, Endpoint, API Keys  
+- Plaid Client ID, Secret  
+- Dwolla API Keys  
+- Encryption keys  
+
+### Run the Project
+
+```bash
+npm run dev
+```
+
+Visit:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🕸️ Code Snippets to Copy
+
+(Use this section to store helpful reusable snippets like Appwrite client setup.)
+
+---
+
+## 🔗 Assets
+
+Add design files or references if needed.
+
+---
+
+## 🚀 More
+
+Potential future improvements:
+
+- AI-powered spending insights  
+- Budget planning tools  
+- Multi-currency support  
+- Dark mode  
+
+---
+
+## 📸 Screenshots
+
+Make sure your images are stored here:
+
+```
+public/screenshots/login.png
+public/screenshots/signup.png
+public/screenshots/dashboard.png
+```
+
+### **UI Preview**
+
+<div align="center">
+  <!-- Login + Dashboard -->
+  <img src="./public/screenshots/login.png" width="600" />
+  <br /><br />
+
+  <!-- Sign Up Page -->
+  <img src="./public/screenshots/signup.png" width="600" />
+  <br /><br />
+
+  <!-- Dashboard Page -->
+  <img src="./public/screenshots/dashboard.png" width="700" />
+</div>
+
+---
