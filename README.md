@@ -143,13 +143,6 @@ Potential future improvements:
 
 ## 📸 Screenshots
 
-Make sure your images are stored here:
-
-```
-public/screenshots/login.png
-public/screenshots/signup.png
-public/screenshots/dashboard.png
-```
 
 ### **UI Preview**
 
