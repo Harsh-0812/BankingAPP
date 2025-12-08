@@ -155,15 +155,15 @@ public/screenshots/dashboard.png
 
 <div align="center">
   <!-- Login + Dashboard -->
-  <img src="./public/screenshots/login.png" width="600" />
+  <img src="./login.png" width="600" />
   <br /><br />
 
   <!-- Sign Up Page -->
-  <img src="./public/screenshots/signup.png" width="600" />
+  <img src="./signup.png" width="600" />
   <br /><br />
 
   <!-- Dashboard Page -->
-  <img src="./public/screenshots/dashboard.png" width="700" />
+  <img src="./dashboard.png" width="700" />
 </div>
 
 ---
